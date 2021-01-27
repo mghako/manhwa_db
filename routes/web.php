@@ -21,3 +21,11 @@ Route::get('/home', 'HomeController@index')->name('home');
 
 
 Route::get('/dashboard', 'DashboardController@index')->name('dashboard.index');
+
+
+
+Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function() {
+    Route::resources([
+        'series' => 'SeriesController'
+    ]);
+});

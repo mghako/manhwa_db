@@ -2,10 +2,10 @@
 
 namespace App\Http\Controllers;
 
-use App\Series;
+use App\Thumbnail;
 use Illuminate\Http\Request;
 
-class SeriesController extends Controller
+class ThumbnailController extends Controller
 {
     /**
      * Display a listing of the resource.
@@ -41,10 +41,10 @@ class SeriesController extends Controller
     /**
      * Display the specified resource.
      *
-     * @param  \App\Series  $series
+     * @param  \App\Thumbnail  $thumbnail
      * @return \Illuminate\Http\Response
      */
-    public function show(Series $series)
+    public function show(Thumbnail $thumbnail)
     {
         //
     }
@@ -52,10 +52,10 @@ class SeriesController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Series  $series
+     * @param  \App\Thumbnail  $thumbnail
      * @return \Illuminate\Http\Response
      */
-    public function edit(Series $series)
+    public function edit(Thumbnail $thumbnail)
     {
         //
     }
@@ -64,10 +64,10 @@ class SeriesController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Series  $series
+     * @param  \App\Thumbnail  $thumbnail
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Series $series)
+    public function update(Request $request, Thumbnail $thumbnail)
     {
         //
     }
@@ -75,10 +75,10 @@ class SeriesController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Series  $series
+     * @param  \App\Thumbnail  $thumbnail
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Series $series)
+    public function destroy(Thumbnail $thumbnail)
     {
         //
     }

@@ -12,7 +12,7 @@
     <link href="https://fonts.googleapis.com/css?family=Rubik:400,400i,500,500i,700,700i&amp;display=swap" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,500,500i,700,700i,900&amp;display=swap" rel="stylesheet">
     
-    <link rel="stylesheet" type="text/css" href="{{ asset('css/fontawesome.css') }}">
+    {{-- <link rel="stylesheet" type="text/css" href="{{ asset('css/fontawesome.css') }}"> --}}
     <!-- ico-font-->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/vendors/icofont.css') }}">
     <!-- Themify icon-->
@@ -31,6 +31,8 @@
     <link id="color" rel="stylesheet" href="{{ asset('css/color-1.css') }}" media="screen">
     <!-- Responsive css-->
     <link rel="stylesheet" type="text/css" href="{{ asset('css/responsive.css') }}">
+    <script src="https://kit.fontawesome.com/aedd388212.js" crossorigin="anonymous"></script>
+    @yield('custom-css')
   </head>
   <body>
     <!-- tap on top starts-->
@@ -191,26 +193,7 @@
           </div>
           <div class="logo-icon-wrapper"><a href="index.html"><img class="img-fluid" src="../assets/images/logo/logo-icon.png" alt=""></a></div>
           <nav>
-            <div class="sidebar-main">
-              <div id="sidebar-menu">
-                <ul class="sidebar-links custom-scrollbar">
-                  <li class="back-btn">
-                    <div class="mobile-back text-right"><span>Back</span><i class="fa fa-angle-right pl-2" aria-hidden="true"></i></div>
-                  </li>
-                  <li class="sidebar-list"><a class="nav-link sidebar-title" href="#" target="_blank"><i data-feather="home"></i><span>Dashboard</span></a></li>
-                  <li class="sidebar-list"><a class="nav-link sidebar-title" href="#"><i data-feather="settings"></i><span>Management</span></a>
-                    <ul class="sidebar-submenu">
-                      <li><a class="submenu-title" href="#">Series<span class="sub-arrow"><i class="fa fa-chevron-right"></i></span></a>
-                        <ul class="nav-sub-childmenu submenu-content">
-                          <li><a href="#"><i data-feather="eye"></i> View</a></li>
-                          <li><a href="#"><i data-feather="plus"></i> Add</a></li>
-                        </ul>
-                      </li>
-                    </ul>
-                  </li>
-                </ul>
-              </div>
-            </div>
+            @include('layouts.partials.sidebar')
           </nav>
         </div>
         <!-- Page Sidebar Ends-->
@@ -219,7 +202,7 @@
             <div class="page-title">
               <div class="row">
                 <div class="col-lg-6">
-                  <h3>Layout Light</h3>
+                  {{-- <h3>Welcome</h3> --}}
                   <ol class="breadcrumb">
                     <li class="breadcrumb-item"><a href="../ltr/index.html">Home</a></li>
                     <li class="breadcrumb-item">@yield('page-title', 'Dashboard')</li>
@@ -233,7 +216,7 @@
           <!-- Container-fluid starts-->
           <div class="container-fluid">
             <div class="row starter-main">
-              <div class="col-sm-12"></div>
+              @yield('main-content')
             </div>
           </div>
           <!-- Container-fluid Ends-->
@@ -276,5 +259,6 @@
     <script src="{{ asset('js/theme-customizer/customizer.js') }}"></script>
     <!-- login js-->
     <!-- Plugin used-->
+    @stack('custom-js')
   </body>
 </html>
