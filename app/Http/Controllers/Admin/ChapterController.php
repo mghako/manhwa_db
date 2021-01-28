@@ -1,8 +1,9 @@
 <?php
 
-namespace App\Http\Controllers;
+namespace App\Http\Controllers\Admin;
 
-use App\Chapter;
+use App\Http\Controllers\Controller;
+use App\Http\Requests\StoreChapterRequest;
 use Illuminate\Http\Request;
 
 class ChapterController extends Controller
@@ -24,7 +25,7 @@ class ChapterController extends Controller
      */
     public function create()
     {
-        //
+        // return view('chapters.create');
     }
 
     /**
@@ -35,16 +36,16 @@ class ChapterController extends Controller
      */
     public function store(Request $request)
     {
-        //
+        
     }
 
     /**
      * Display the specified resource.
      *
-     * @param  \App\Chapter  $chapter
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function show(Chapter $chapter)
+    public function show($id)
     {
         //
     }
@@ -52,10 +53,10 @@ class ChapterController extends Controller
     /**
      * Show the form for editing the specified resource.
      *
-     * @param  \App\Chapter  $chapter
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function edit(Chapter $chapter)
+    public function edit($id)
     {
         //
     }
@@ -64,10 +65,10 @@ class ChapterController extends Controller
      * Update the specified resource in storage.
      *
      * @param  \Illuminate\Http\Request  $request
-     * @param  \App\Chapter  $chapter
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, Chapter $chapter)
+    public function update(Request $request, $id)
     {
         //
     }
@@ -75,10 +76,10 @@ class ChapterController extends Controller
     /**
      * Remove the specified resource from storage.
      *
-     * @param  \App\Chapter  $chapter
+     * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function destroy(Chapter $chapter)
+    public function destroy($id)
     {
         //
     }

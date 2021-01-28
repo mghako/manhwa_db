@@ -18,6 +18,7 @@ class CreateSeriesTable extends Migration
             $table->string('name');
             $table->longText('description');
             $table->unsignedBigInteger('user_id');
+            $table->date('released_date');
             $table->softDeletes();
             $table->timestamps();
 

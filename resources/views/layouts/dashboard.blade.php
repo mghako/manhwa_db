@@ -35,6 +35,7 @@
     @yield('custom-css')
   </head>
   <body>
+    @include('sweetalert::alert')
     <!-- tap on top starts-->
     <div class="tap-top"><i data-feather="chevrons-up"></i></div>
     <!-- tap on tap ends-->

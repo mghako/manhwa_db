@@ -56,7 +56,8 @@ class SeriesController extends Controller
                 'user_id' => auth()->user()->id,
                 'category_id' => $request->category_id,
                 'status_id' => $request->status_id,
-                'description' => $request->description
+                'description' => $request->description,
+                'released_date' => $request->released_date
             ]);
 
             DB::commit();
@@ -80,7 +81,8 @@ class SeriesController extends Controller
      */
     public function show($id)
     {
-        //
+        $series = Series::findOrFail($id);
+        return view('series.show', compact('series'));
     }
 
     /**

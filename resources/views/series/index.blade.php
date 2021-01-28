@@ -21,6 +21,7 @@
                         <tr>
                             <th scope="col">ID</th>
                             <th scope="col">Name</th>
+                            <th scope="col">Released date</th>
                             <th scope="col">Created at</th>
                             <th scope="col">Settings</th>
                         </tr>
@@ -30,6 +31,7 @@
                         <tr>
                             <th scope="row">{{ $s->id }}</th>
                             <td>{{ $s->name }}</td>
+                            <td>{{ $s->released_date }}</td>
                             <td>{{ $s->created_at->diffForHumans() }}</td>
                             <td>
                                 <a href="{{ route('admin.series.show', $s->id) }}" class="btn btn-sm btn-info"><i class="fas fa-eye"></i>View</a>

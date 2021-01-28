@@ -6,5 +6,11 @@ use Illuminate\Database\Eloquent\Model;
 
 class Chapter extends Model
 {
-    //
+    protected $fillable = [
+        'name', 'series_id'
+    ];
+
+    public function series() {
+        return $this->belongsTo(Series::class);
+    }
 }
