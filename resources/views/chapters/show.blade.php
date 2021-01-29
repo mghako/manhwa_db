@@ -7,48 +7,40 @@
 
 @section('main-content')
 
-    
-
     <div class="col-12">
         <div class="card">
             <div class="card-header">
-                <h5>Add Chapter</h5>
-                <h4><a href="{{ $route('admin.series', $series->id) }}">Back to Series</a></h4>
+                <div class="d-flex justify-content-between align-items center">
+                  <h5>Chapter - {{ $chapter->name }} / Series- {{$chapter->series->name}}</h5>
+                  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#addContents">Add Contents</a>
+                </div>
             </div>
             <div class="card-body">
-                <form action="{{ route('admin.store.series.chapters') }}" method="POST" class="form theme-form">
+                <!-- Vertically centered modal -->
+                <!-- Modal -->
+                <div class="modal fade" id="addContents" tabindex="-1" aria-labelledby="addContentsLabel" aria-hidden="true">
+                <div class="modal-dialog modal-dialog-centered">
+                    <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="addContentsLabel">Add Content</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <form action="{{ route('admin.upload.series.chapters', [$chapter->series->id, $chapter->id]) }}" method="POST" enctype="multipart/form-data">
                     @csrf
                     @method('POST')
-                    <div class="card-body">
-                      <div class="row">
-                        <input type="hidden" name="series_id" value="{{ $series->id }}">
-                        <div class="col">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Series Name</label>
-                            <div class="col-sm-9">
-                              <input class="form-control" type="text" name="series_name" value="{{ $series->name }}" autocomplete="off" disabled>
-                            </div>
-                          </div>
-                        </div>
-                      </div>
-                      <div class="row">
-                        <div class="col">
-                          <div class="form-group row">
-                            <label class="col-sm-3 col-form-label">Chapter Name</label>
-                            <div class="col-sm-9">
-                              <input class="form-control" type="text" name="name" autocomplete="off">
-                            </div>
-                          </div>
-                        </div>
-                      </div>
+                    <div class="modal-body">
+                        <input type="file" name="contents[]" multiple>
                     </div>
-                    <div class="card-footer">
-                      <div class="col-sm-9 offset-sm-3">
-                        <button class="btn btn-primary" type="submit" data-original-title="" title="">Save</button>
-                        <input class="btn btn-white" type="reset" value="Cancel" data-original-title="" title="">
-                      </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                        <button type="submit" class="btn btn-primary">Save</button>
                     </div>
-                  </form>
+                    </form>
+                    </div>
+                </div>
+                </div>
             </div>
         </div>
     </div>

@@ -34,6 +34,7 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function() {
     Route::get('series/{id}/chapter', 'SeriesChapterController@create')->name('create.series.chapters');
     Route::post('series/chapter', 'SeriesChapterController@store')->name('store.series.chapters');
     Route::get('series/{series_id}/chapter/{chapter_id}', 'SeriesChapterController@show')->name('show.series.chapters');
+    Route::post('series/{series_id}/chapter/{chapter_id}', 'SeriesChapterController@upload')->name('upload.series.chapters');
     
 
 });

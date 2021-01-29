@@ -36,4 +36,14 @@ class SeriesChapterController extends Controller
             return back()->withError('Chapter Cannot Add!');
         }
     }
+    public function show($series_id, $chapter_id) {
+
+        $chapter = Chapter::findOrFail($chapter_id)->with('series')->first();
+        return view('chapters.show', compact('chapter'));
+
+    }
+
+    public function upload(Request $request, $series_id, $chapter_id) {
+        dd($request);
+    }
 }
