@@ -16,6 +16,18 @@
                 </div>
             </div>
             <div class="card-body">
+
+                <div class="row">
+                @forelse($chapter->images as $image)
+                    <div class="col-md-6 offset-md-3">
+                        <div>
+                            <img src="{{ asset('/storage/'.$image->image_url) }}" alt="" class="img-fluid">
+                        </div>
+                    </div>
+                @empty
+                    <p><span class="badge badge-warning">No Contents are added!</span></p>
+                @endforelse
+                </div>
                 <!-- Vertically centered modal -->
                 <!-- Modal -->
                 <div class="modal fade" id="addContents" tabindex="-1" aria-labelledby="addContentsLabel" aria-hidden="true">
