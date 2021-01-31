@@ -14,7 +14,5 @@ class Image extends Model
         return $this->belongsTo(Chapter::class);
     }
 
-    public function order() {
-        
-    }
+    
 }

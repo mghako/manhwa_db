@@ -12,7 +12,7 @@
             <div class="card-header">
                 <div class="d-flex justify-content-between align-items center">
                   <h5>Chapter - {{ $chapter->name }} / Series- {{$chapter->series->name}}</h5>
-                  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#addContents">Add Contents</a>
+                  <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#addContents"><i class="fas fa-plus"></i> Add Contents</a>
                 </div>
             </div>
             <div class="card-body">
@@ -21,11 +21,15 @@
                 @forelse($chapter->images as $image)
                     <div class="col-md-6 offset-md-3">
                         <div>
+                            <div class="d-flex justify-content-end align-items-center my-2">
+                                <a href="{{ route('admin.destroy.chapters.images', $image->id) }}" class="btn btn-md btn-danger"
+                                    onclick="return confirm("Are you sure ?");><i class="fas fa-trash"></i> Delete <i class="fas fa-arrow-down"></i></a>
+                            </div>
                             <img src="{{ asset('/storage/'.$image->image_url) }}" alt="" class="img-fluid">
                         </div>
                     </div>
                 @empty
-                    <p><span class="badge badge-warning">No Contents are added!</span></p>
+                <h4><span class="badge badge-warning">No Contents are added!</span></h4>
                 @endforelse
                 </div>
                 <!-- Vertically centered modal -->

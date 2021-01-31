@@ -51,17 +51,19 @@ class SeriesChapterController extends Controller
        
         
         $newPath = '/contents/'.'series/'.$series_id.'/chapters/'.$chapter_id;
-        if(Storage::exists($newPath)){
+        // if(Storage::exists($newPath)){
 
-        } else {
-            Storage::makeDirectory($newPath);
-        }
+        // } else {
+        //     Storage::makeDirectory($newPath);
+        // }
 
         try {
 
             DB::beginTransaction();
             foreach($request->file('contents') as $content) {
+                
                 $storedPath = $content->storeAs($newPath, $content->getClientOriginalName(), 'public');
+
                 $image = Image::create([
                     'image_url' => $storedPath,
                     'image_name' => $content->getClientOriginalName(),

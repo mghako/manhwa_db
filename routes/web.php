@@ -28,13 +28,14 @@ Route::namespace('Admin')->prefix('admin')->name('admin.')->group(function() {
 
     Route::resources([
         'series' => 'SeriesController',
-        'chapters' => 'ChapterController'
+        'chapters' => 'ChapterController',
     ]);
 
-    Route::get('series/{id}/chapter', 'SeriesChapterController@create')->name('create.series.chapters');
-    Route::post('series/chapter', 'SeriesChapterController@store')->name('store.series.chapters');
-    Route::get('series/{series_id}/chapter/{chapter_id}', 'SeriesChapterController@show')->name('show.series.chapters');
-    Route::post('series/{series_id}/chapter/{chapter_id}', 'SeriesChapterController@upload')->name('upload.series.chapters');
+    Route::get('series/{id}/chapters', 'SeriesChapterController@create')->name('create.series.chapters');
+    Route::post('series/chapters', 'SeriesChapterController@store')->name('store.series.chapters');
+    Route::get('series/{series_id}/chapters/{chapter_id}', 'SeriesChapterController@show')->name('show.series.chapters');
+    Route::post('series/{series_id}/chapters/{chapter_id}', 'SeriesChapterController@upload')->name('upload.series.chapters');
     
+    Route::get('chapters/images/delete/{id}', 'ChapterImageController@destroy')->name('destroy.chapters.images');
 
 });
