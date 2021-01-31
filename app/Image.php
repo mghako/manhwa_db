@@ -11,8 +11,7 @@ class Image extends Model
     ];
 
     public function chapter() {
-        return $this->belongsTo(Chapter::class);
+        return $this->belongsTo(Chapter::class)->orderBy('image_name');
     }
 
-    
 }

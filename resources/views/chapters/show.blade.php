@@ -16,7 +16,6 @@
                 </div>
             </div>
             <div class="card-body">
-
                 <div class="row">
                 @forelse($chapter->images as $image)
                     <div class="col-md-6 offset-md-3">
@@ -44,15 +43,15 @@
                         </button>
                     </div>
                     <form action="{{ route('admin.upload.series.chapters', [$chapter->series->id, $chapter->id]) }}" method="POST" enctype="multipart/form-data">
-                    @csrf
-                    @method('POST')
-                    <div class="modal-body">
-                        <input type="file" name="contents[]" multiple>
-                    </div>
-                    <div class="modal-footer">
-                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
-                        <button type="submit" class="btn btn-primary">Save</button>
-                    </div>
+                        @csrf
+                        @method('POST')
+                        <div class="modal-body">
+                            <input type="file" name="contents[]" multiple>
+                        </div>
+                        <div class="modal-footer">
+                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="submit" class="btn btn-primary">Save</button>
+                        </div>
                     </form>
                     </div>
                 </div>

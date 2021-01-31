@@ -13,7 +13,9 @@ class Chapter extends Model
     public function series() {
         return $this->belongsTo(Series::class);
     }
+
     public function images() {
-        return $this->hasMany(Image::class)->orderBy('image_name');
+        return $this->hasMany(Image::class);
     }
+
 }
