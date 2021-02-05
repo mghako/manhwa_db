@@ -68,15 +68,15 @@
             <ul class="nav-menus">
                 <li class="profile-nav onhover-dropdown p-0 mr-0">
                     <div class="media profile-media"><img class="b-r-10" src="../assets/images/dashboard/profile.jpg" alt="">
-                    <div class="media-body"><span>Emay Walter</span>
+                    <div class="media-body"><span>{{ auth()->user()->name ?? 'Username' }}</span>
                         <p class="mb-0 font-roboto">Admin <i class="middle fa fa-angle-down"></i></p>
                     </div>
                     </div>
                     <ul class="profile-dropdown onhover-show-div">
                     <li><i data-feather="user"></i><span>Account </span></li>
-                    <li><i data-feather="mail"></i><span>Inbox</span></li>
+                    {{-- <li><i data-feather="mail"></i><span>Inbox</span></li>
                     <li><i data-feather="file-text"></i><span>Taskboard</span></li>
-                    <li><i data-feather="settings"></i><span>Settings</span></li>
+                    <li><i data-feather="settings"></i><span>Settings</span></li> --}}
                     <li><i data-feather="log-out"> </i>
                       <a class="" href="{{ route('logout') }}"
                           onclick="event.preventDefault();

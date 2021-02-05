@@ -15,7 +15,7 @@
                 <h5>Add Series</h5>
             </div>
             <div class="card-body">
-                <form action="{{ route('admin.series.store') }}" method="POST" class="form theme-form">
+                <form action="{{ route('admin.series.store') }}" method="POST" class="form theme-form" enctype="multipart/form-data">
                 @csrf
                     <div class="card-body">
                       <div class="row">

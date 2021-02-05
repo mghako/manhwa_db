@@ -28,7 +28,8 @@ class StoreSeriesRequest extends FormRequest
             'description' => 'required|string|min:3',
             'status_id' => 'required',
             'category_id' => 'required',
-            'released_date' => 'required',            
+            'released_date' => 'required',        
+            'thumbnail'     => 'required'
         ];
     }
 }

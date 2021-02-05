@@ -7,7 +7,7 @@ use Illuminate\Database\Eloquent\Model;
 class Thumbnail extends Model
 {
     protected $fillable = [
-        'url'
+        'image', 'series_id'
     ];
 
     public function series() {

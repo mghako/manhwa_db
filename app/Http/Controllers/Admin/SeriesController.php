@@ -7,6 +7,7 @@ use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreSeriesRequest;
 use App\Series;
 use App\Status;
+use App\Thumbnail;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\DB;
 
@@ -48,8 +49,11 @@ class SeriesController extends Controller
      */
     public function store(StoreSeriesRequest $request)
     {
+        
         try {
             DB::beginTransaction();
+
+            
 
             $series = Series::create([
                 'name' => $request->name,
@@ -59,13 +63,29 @@ class SeriesController extends Controller
                 'description' => $request->description,
                 'released_date' => $request->released_date
             ]);
+            $series->save();
+
+            if($series && $request->has('thumbnail')) {
+                // create path for thumbnails upload
+                $newPath = '/thumbnails/'.'series/'.$series->id;
+                $storedPath = $request->file('thumbnail')->storeAs($newPath, $request->file('thumbnail')->getClientOriginalName(), 'public');
+                
+                if($storedPath) {
+                    Thumbnail::create([
+                        'image' => $storedPath,
+                        'series_id' => $series->id
+                    ]);
+                }
+                
+            }
 
             DB::commit();
 
-            return redirect()->route('admin.series.index');
+            return redirect()->route('admin.series.index')->withSuccess('Successfully added Series!');
 
         } catch (\Throwable $th) {
            DB::rollBack();
+           throw $th;
         }
 
         
@@ -93,7 +113,10 @@ class SeriesController extends Controller
      */
     public function edit($id)
     {
-        //
+        $categories = Category::cursor();
+        $statuses = Status::cursor();
+        $series = Series::findOrFail($id);
+        return view('series.edit', compact('series', 'categories', 'statuses'));
     }
 
     /**

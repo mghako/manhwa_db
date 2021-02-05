@@ -17,8 +17,8 @@ class Series extends Model
         return $this->belongsTo(User::class);
     }
 
-    public function thumbnails() {
-        return $this->hasMany(Thumbnail::class);
+    public function thumbnail() {
+        return $this->hasOne(Thumbnail::class);
     }
 
     public function category() {

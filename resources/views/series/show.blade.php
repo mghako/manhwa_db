@@ -19,8 +19,7 @@
             </div>
             <div class="card-body">
                 <div class="card-body">
-                    <img src="{{ asset('images/onepunchman_season1.jpg') }}" alt=""
-                        class="d-block text-center mx-auto my-2">
+                    <img src="{{ asset('/storage/'.$series->thumbnail->image) }}" alt="Series Thumbnail" class="d-block text-center mx-auto my-2">
                     <section id="description">
 
                         <h5>Description</h5>
