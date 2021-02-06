@@ -19,7 +19,10 @@
             </div>
             <div class="card-body">
                 <div class="card-body">
-                    <img src="{{ asset('/storage/'.$series->thumbnail->image) }}" alt="Series Thumbnail" class="d-block text-center mx-auto my-2">
+                    <div>
+                        <button class="d-block btn btn-warning mx-auto"><i class="fas fa-edit"></i> Edit</button>
+                        <img src="{{ asset('/storage/'.$series->thumbnail->image) }}" alt="Series Thumbnail" class="d-block text-center mx-auto my-2">
+                    </div>
                     <section id="description">
 
                         <h5>Description</h5>

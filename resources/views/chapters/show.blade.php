@@ -13,6 +13,7 @@
                 <div class="d-flex justify-content-between align-items center">
                   <h5>Chapter - {{ $chapter->name }} / Series- {{$chapter->series->name}}</h5>
                   <a href="#" class="btn btn-primary" data-toggle="modal" data-target="#addContents"><i class="fas fa-plus"></i> Add Contents</a>
+                  <a href="#" class="btn btn-danger"><i class="fas fa-trash"></i> Delete Chapter</a>
                 </div>
             </div>
             <div class="card-body">
