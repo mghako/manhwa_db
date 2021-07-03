@@ -81,7 +81,8 @@
 
             <div class="content">
                 <div class="title m-b-md links">
-                    <a href="#" style="text-decoration:none;">Manhwa</a>
+                    <a href="#" style="text-decoration:none;">Manhwa - test 2</a>
+                    <a href="#" style="text-decoration:none;">Manhwa - test 3</a>
                 </div>
             </div>
         </div>

@@ -13,7 +13,7 @@
         <div class="card">
             <div class="card-header">
                 <h5>Add Chapter</h5>
-                <h4><a href="{{ $route('admin.series', $series->id) }}">Back to Series</a></h4>
+                <h4><a href="">Back to Series</a></h4>
             </div>
             <div class="card-body">
                 <form action="{{ route('admin.store.series.chapters') }}" method="POST" class="form theme-form">
